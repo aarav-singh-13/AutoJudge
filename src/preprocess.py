@@ -7,7 +7,7 @@ def clean_text(text):
     return text
 
 def preprocess_text(path):
-    df = pd.read_json(path)
+    df = pd.read_json(path, lines=True)
     
     df["full_text"] = (
         df["title"].fillna("") + " " +

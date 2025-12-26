@@ -25,10 +25,16 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 import joblib
 
-clf = LogisticRegression(
-    max_iter=1000,
-    class_weight="balanced" 
-)
+# clf = LogisticRegression(
+#     max_iter=1000,
+#     class_weight="balanced" 
+# )
+
+from sklearn.svm import LinearSVC
+
+clf = LinearSVC(class_weight="balanced")
+clf.fit(X_train, y_class_train)
+
 
 clf.fit(X_train, y_class_train)
 

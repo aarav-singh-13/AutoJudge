@@ -13,11 +13,12 @@ def build_features(df, tfidf=None, scaler=None, fit=True):
         X_text = tfidf.fit_transform(df["full_text"])
     else:
         X_text = tfidf.transform(df["full_text"])
-# add more features
+# add more features bitwise symbols
     def extra_features(text): 
         return [
             len(text),
-            text.count('=') + text.count('+') + text.count('-'),
+            # text.count('=') + text.count('+') + text.count('-'),
+            sum(text.count(k) for k in ['=','+','-', '*','|']),
             sum(text.count(k) for k in ['dp','graph','tree','dfs','bfs'])
         ]
 

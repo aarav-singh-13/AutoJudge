@@ -13,8 +13,8 @@ def build_features(df, tfidf=None, scaler=None, fit=True):
         X_text = tfidf.fit_transform(df["full_text"])
     else:
         X_text = tfidf.transform(df["full_text"])
-
-    def extra_features(text):
+# add more features
+    def extra_features(text): 
         return [
             len(text),
             text.count('=') + text.count('+') + text.count('-'),

@@ -32,7 +32,7 @@ import joblib
 
 from sklearn.svm import LinearSVC
 
-clf = LinearSVC(class_weight="balanced")
+clf = LinearSVC(class_weight="balanced", max_iter=5000)
 clf.fit(X_train, y_class_train)
 
 

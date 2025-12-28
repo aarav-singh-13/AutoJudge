@@ -1,26 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
     <title>AutoJudge</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-        textarea {
-            width: 100%;
-            height: 200px;
-        }
-        button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-        .result {
-            margin-top: 20px;
-            font-size: 18px;
-        }
-    </style>
 </head>
 <body>
 
@@ -28,9 +11,9 @@
     <p>Paste a programming problem description below:</p>
 
     <form method="POST">
-        <textarea name="problem_text" required></textarea><br>
-        <textarea name="input_text" required></textarea><br>
-        <textarea name="output_text" required></textarea><br>
+        <textarea name="problem_text" required class="problem"></textarea><br>
+        <textarea name="input_text" required class="input"></textarea><br>
+        <textarea name="output_text" required class="output"></textarea><br>
         <button type="submit">Predict</button>
     </form>
 

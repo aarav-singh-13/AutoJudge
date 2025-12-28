@@ -1,9 +1,13 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import StandardScaler
 import numpy as np
+import pandas as pd
 from scipy.sparse import hstack 
 
 def build_features(df, tfidf=None, scaler=None, fit=True):
+    if not isinstance(df, pd.DataFrame):
+        df = pd.DataFrame(df)
+
     if fit:
         tfidf = TfidfVectorizer(
             max_features=5000,

@@ -18,7 +18,10 @@ def index():
     prediction_score = None
 
     if request.method == "POST":
-        user_text = request.form["problem_text"]
+        problem_text = request.form["problem_text"]
+        input_text = request.form["input_text"]
+        output_text = request.form["output_text"]
+        user_text = problem_text + " " + input_text + " " + output_text
 
         clean = clean_text(user_text)
 
@@ -35,7 +38,10 @@ def index():
     return render_template(
         "index.html",
         prediction_class=prediction_class,
-        prediction_score=prediction_score
+        prediction_score=prediction_score,
+        problem_text=problem_text,
+        input_text=input_text,
+        output_text=output_text
     )
 
 

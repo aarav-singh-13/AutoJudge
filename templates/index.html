@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-
     <title>AutoJudge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
     <h1>AutoJudge</h1>
-    <p>Paste a programming problem description below:</p>
+    <p>Paste a programming problem below:</p>
 
     <form method="POST">
-        <textarea name="problem_text" required class="problem"></textarea><br>
-        <textarea name="input_text" required class="input"></textarea><br>
-        <textarea name="output_text" required class="output"></textarea><br>
+        <label>Problem Description</label><br>
+        <textarea name="problem_text" required class="problem">{{ problem_text }}</textarea><br><br>
+
+        <label>Input Description</label><br>
+        <textarea name="input_text" required class="input">{{ input_text }}</textarea><br><br>
+
+        <label>Output Description</label><br>
+        <textarea name="output_text" required class="output">{{ output_text }}</textarea><br><br>
+
         <button type="submit">Predict</button>
     </form>
 

@@ -14,6 +14,9 @@ scaler = joblib.load("models/scaler.pkl")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    problem_text = ""
+    input_text = ""
+    output_text = ""
     prediction_class = None
     prediction_score = None
 

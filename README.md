@@ -1,12 +1,12 @@
 # AutoJudge
 Predicting Programming Problem Difficulty
 
-## All the external libraries are present in requirements.txt
 
-Dataset used : https://github.com/AREEG94FAHAD/TaskComplexityEval-24
+## Dataset used : 
+https://github.com/AREEG94FAHAD/TaskComplexityEval-24
 (80% to train, 20% to test)
 
-Approach and Models used :
+## Approach and Models used :
 
 1) Pre-processing : 
 2) Feature Extraction : 
@@ -16,12 +16,13 @@ Approach and Models used :
     LinearSVC 
     Linear Regression
 
-Evaluation Metrics :
+## Evaluation Metrics :
     Accuracy : 48%
     MSE : 18.50214402554875
     RMSE : 4.3
 
-Steps to run locally :
+## Steps to run locally :
+
 1) Clone the repo
     git clone https://github.com/aarav-singh-13/AutoJudge.git
 

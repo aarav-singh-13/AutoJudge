@@ -4,5 +4,5 @@ scikit-learn
 nltk
 flask
 joblib
-
+matplotlib
 

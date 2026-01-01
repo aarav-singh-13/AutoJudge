@@ -23,7 +23,8 @@ def build_features(df, tfidf=None, scaler=None, fit=True):
             len(text),
             # text.count('=') + text.count('+') + text.count('-'),
             sum(text.count(k) for k in ['=','+','-', '*','|']),
-            sum(text.count(k) for k in ['dp','graph','tree','dfs','bfs'])
+            sum(text.count(k) for k in ['mod', 'gcd', 'lcm']),
+            sum(text.count(2*k) for k in ['dp','graph','tree','dfs','bfs'])
         ]
 
     X_extra = np.array(df["full_text"].apply(extra_features).tolist())

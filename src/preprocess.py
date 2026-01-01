@@ -1,12 +1,6 @@
 import pandas as pd
 import re
 
-def clean_text(text):
-    text = text.lower()
-    text = re.sub(r'\s+', ' ', text)
-    return text
-
-
 def clean_text(text) :
     if not isinstance(text, str):
         return ""

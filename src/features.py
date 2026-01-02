@@ -21,9 +21,7 @@ def build_features(df, tfidf=None, scaler=None, fit=True):
     def extra_features(text): 
         return [
             len(text),
-            # text.count('=') + text.count('+') + text.count('-'),
-            sum(text.count(k) for k in ['=','+','-', '*','|']),
-            sum(text.count(k) for k in ['mod', 'gcd', 'lcm']),
+            sum(text.count(k) for k in ['=','+','-', '*','|', 'mod', 'gcd', 'lcm']),
             sum(text.count(k) for k in ['dp','graph','tree','dfs','bfs'])
         ]
 

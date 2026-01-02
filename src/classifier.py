@@ -2,15 +2,8 @@
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from sklearn.metrics import classification_report
 import joblib
-import numpy as np
 from train import X_train, X_test, y_class_train, y_class_test, y_score_train, y_score_test
 import matplotlib.pyplot as plt
-
-# clf = LogisticRegression(
-#     max_iter=1000,
-#     class_weight="balanced" 
-# )
-
 from sklearn.svm import LinearSVC
 
 clf = LinearSVC(class_weight="balanced", max_iter=5000)

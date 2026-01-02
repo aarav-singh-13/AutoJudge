@@ -21,8 +21,8 @@ def build_features(df, tfidf=None, scaler=None, fit=True):
     def extra_features(text): 
         return [
             len(text),
-            sum(text.count(k) for k in ['=','+','-', '*','|', 'mod', 'gcd', 'lcm']),
-            sum(text.count(k) for k in ['dp','graph','tree','dfs','bfs'])
+            sum(text.count(k) for k in ['+','-','|', 'mod ', 'gcd', 'lcm']),
+            sum(text.count(k) for k in ['subsequence', 'graph','tree'])
         ]
 
     X_extra = np.array(df["full_text"].apply(extra_features).tolist())

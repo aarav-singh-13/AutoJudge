@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import joblib
+import numpy as np
 
+from utill import score_to_class
 from src.preprocess import clean_text
 from src.features import build_features
 
@@ -34,9 +36,9 @@ def index():
             scaler=scaler,
             fit=False
         )
+        prediction_score = np.clip(round(reg.predict(X)[0], 2), 0, 10)
+        prediction_class = score_to_class(prediction_score)
 
-        prediction_class = clf.predict(X)[0]
-        prediction_score = round(reg.predict(X)[0], 2)
 
     return render_template(
         "index.html",

@@ -6,7 +6,7 @@ from train import X_train, X_test, y_class_train, y_class_test, y_score_train, y
 import matplotlib.pyplot as plt
 from sklearn.svm import LinearSVC
 
-clf = LinearSVC(class_weight="balanced", max_iter=5000)
+clf = LinearSVC(class_weight="balanced", max_iter=50000)
 clf.fit(X_train, y_class_train)
 
 
@@ -21,7 +21,6 @@ fig, ax = plt.subplots(figsize=(8, 6))
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['easy', 'hard', 'medium'])
 disp.plot(cmap='Blues', ax=ax)
 plt.title("Confusion Matrix")
-plt.show()
 
 joblib.dump(clf, "classifier.pkl")
 

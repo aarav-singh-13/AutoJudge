@@ -8,16 +8,16 @@ https://github.com/AREEG94FAHAD/TaskComplexityEval-24
 
 ## Approach and Models used :
 
-1) Pre-processing :
+1) Pre-processing : <br>
    Removed extra spaces, all links, converted to lowercase and handled cases where input is not a string. <br>
-   All textual fields were concatenated into a single field
+   All textual fields were concatenated into a single field <br>
                    
-3) Feature Extraction : 
+3) Feature Extraction : <br>
     Used TF-IDF to monitor keywords <br>
-    Hard-coded features like algebraic symbols and bitwise operators, algorithms, constraints etc
-4) Models :
+    Hard-coded features like algebraic symbols and bitwise operators, algorithms, constraints etc <br>
+4) Models : <br>
     LinearSVC <br>
-    Linear Regression (See report)
+    Linear Regression (See report) <br>
 
 ## Evaluation Metrics :
     Accuracy : 48%

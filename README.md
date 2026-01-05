@@ -8,37 +8,40 @@ https://github.com/AREEG94FAHAD/TaskComplexityEval-24
 
 ## Approach and Models used :
 
-1) Pre-processing : 
-2) Feature Extraction : 
-    used TF-IDF to monitor keywords
-    hard-coded features like algebraic symbols and bitwise operators, algorithms, etc
-3) Models :
+1) Pre-processing :
+   Removed extra spaces, all links, converted to lowercase and handled cases where input is not a string
+   All textual fields were concatenated into a single field
+                   
+3) Feature Extraction : 
+    Used TF-IDF to monitor keywords
+    Hard-coded features like algebraic symbols and bitwise operators, algorithms, constraints etc
+4) Models :
     LinearSVC 
-    Linear Regression
+    Linear Regression (See report)
 
 ## Evaluation Metrics :
     Accuracy : 48%
-    MSE : 18.50214402554875
-    RMSE : 4.3
+    MSE : 12.929295363912711
+    RMSE : 3.59573293835
 
 ## Steps to run locally :
 
-1) Clone the repo
+1) Clone the repo :
     git clone https://github.com/aarav-singh-13/AutoJudge.git
 
 2) Download virtual environment :
     python -m venv venv
     venv\Scripts\activate
 
-3) Download libraries from requirements.txt
+3) Download libraries from requirements.txt :
     pip install -r requirements.txt
 
 4) Run app.py :
-    ./venv/Scripts/python app.py
+    ./venv/Scripts/python app.py or python app.py
 
 ## Web Interface 
 
-User gets three tet boxes to give the problem, input and output description
-On clicking predict button, a post request is sent to the backend. The trained model..
+User gets three text boxes to give the problem, input and output description
+On clicking predict button, a post request is sent to the backend, which returns the predicted score and class.
 
 
